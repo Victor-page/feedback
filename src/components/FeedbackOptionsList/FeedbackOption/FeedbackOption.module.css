@@ -1,0 +1,11 @@
+.feedbackOption {
+  cursor: pointer;
+}
+
+.feedbackOption:not(:last-child) {
+  margin-right: 10px;
+}
+
+.feedbackOption::first-letter {
+  text-transform: uppercase;
+}

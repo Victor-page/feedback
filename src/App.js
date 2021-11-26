@@ -6,16 +6,17 @@ import Section from 'components/Section';
 import Notification from 'components/Notification';
 
 class App extends Component {
+  static propTypes = {};
+
   state = {
     good: 0,
     neutral: 0,
     bad: 0,
   };
 
-  handleFeedback = ({ target: { textContent: label } }) => {
-    const property = label.toLowerCase();
+  handleFeedback = ({ target: { textContent: buttonLabel } }) => {
     this.setState((previousState) => ({
-      [property]: previousState[property] + 1,
+      [buttonLabel]: previousState[buttonLabel] + 1,
     }));
   };
 
@@ -32,6 +33,7 @@ class App extends Component {
 
   render() {
     const { good, neutral, bad } = this.state;
+
     const isFeedback = good || neutral || bad;
 
     return (
