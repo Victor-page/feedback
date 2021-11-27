@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import FeedbackOption from './FeedbackOption/FeedbackOption';
 
 const FeedbackOptionsList = ({ options, onLeaveFeedback }) =>
@@ -8,5 +10,9 @@ const FeedbackOptionsList = ({ options, onLeaveFeedback }) =>
       label={option}
     />
   ));
+
+FeedbackOptionsList.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default FeedbackOptionsList;
