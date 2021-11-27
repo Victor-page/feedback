@@ -33,14 +33,14 @@ class App extends Component {
 
   render() {
     const { good, neutral, bad } = this.state;
-
+    const buttonLabels = Object.keys({ good, neutral, bad });
     const isFeedback = good || neutral || bad;
 
     return (
       <>
         <Section title="Please leave feedback">
           <FeedbackOptionsList
-            options={Object.keys({ good, neutral, bad })}
+            options={buttonLabels}
             onLeaveFeedback={this.handleFeedback}
           />
         </Section>
@@ -56,7 +56,9 @@ class App extends Component {
             />
           </Section>
         ) : (
-          <Notification message="There's no feedback" />
+          <Section>
+            <Notification message="There's no feedback" />
+          </Section>
         )}
       </>
     );
