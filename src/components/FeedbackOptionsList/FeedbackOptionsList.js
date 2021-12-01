@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import FeedbackOption from './FeedbackOption/FeedbackOption';
+import FeedbackOption from './FeedbackOption';
 
 const FeedbackOptionsList = ({ options, onLeaveFeedback }) =>
   options.map((option) => (
